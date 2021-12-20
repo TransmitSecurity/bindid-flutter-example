@@ -1,0 +1,346 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name XmBindIdSDK
+import AuthenticationServices
+import CommonCrypto
+import Compression
+import CoreLocation
+import CryptoKit
+import Foundation
+import LocalAuthentication
+import SafariServices
+import Security
+import Swift
+import SystemConfiguration
+import UIKit
+@_exported import XmBindIdSDK
+public typealias XmBindIdCompletion = ((Swift.Bool?, XmBindIdSDK.XmBindIdError?) -> ())?
+public typealias XmBindIdResponseCompletion = ((XmBindIdSDK.XmBindIdResponse?, XmBindIdSDK.XmBindIdError?) -> ())?
+public typealias XmBindIdExchangeTokenResponseCompletion = ((XmBindIdSDK.XmBindIdExchangeTokenResponse?, XmBindIdSDK.XmBindIdError?) -> ())?
+extension XmBindIdLoginHintType {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdBoundToType {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdApiCompatibilityLevel {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdScopeType {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public var index: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdTokenType {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdServerEnvironmentMode {
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public var authorizeUrl: Swift.String {
+    get
+  }
+  public var tokenUrl: Swift.String {
+    get
+  }
+  public var enrollUrl: Swift.String {
+    get
+  }
+  public var challengeUrl: Swift.String {
+    get
+  }
+  public var bioAuthorizeUrl: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension XmBindIdServerEnvironment {
+  public var url: Swift.String {
+    get
+  }
+  public var authorizeUrl: Swift.String {
+    get
+  }
+  public var tokenUrl: Swift.String {
+    get
+  }
+}
+extension XmBindIdSdk {
+  public var version: Swift.String? {
+    get
+  }
+  public var buildNumber: Swift.String? {
+    get
+  }
+}
+public let XmBindIdButtonClass: Swift.String
+public let XmBindIdButtonOnFailureCallback: Swift.String
+public let XmBindIdButtonOnSuccessCallback: Swift.String
+public enum XmBindIdErrorCode : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case sdkNotInitialized
+  case invalidConfig
+  case invalidResponse
+  case accessDenied
+  case serverError
+  case userCanceled
+  case platformError
+  case internetConnection
+  case unknownUser
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [XmBindIdSDK.XmBindIdErrorCode]
+  public typealias RawValue = Swift.String
+  public static var allCases: [XmBindIdSDK.XmBindIdErrorCode] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum XmBindIdApiCompatibilityLevel : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case useLatest
+  case apiLevel1
+  public typealias AllCases = [XmBindIdSDK.XmBindIdApiCompatibilityLevel]
+  public static var allCases: [XmBindIdSDK.XmBindIdApiCompatibilityLevel] {
+    get
+  }
+}
+public enum XmBindIdLoginHintType : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case email
+  public typealias AllCases = [XmBindIdSDK.XmBindIdLoginHintType]
+  public static var allCases: [XmBindIdSDK.XmBindIdLoginHintType] {
+    get
+  }
+}
+public enum XmBindIdBoundToType : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case sub
+  case alias
+  public typealias AllCases = [XmBindIdSDK.XmBindIdBoundToType]
+  public static var allCases: [XmBindIdSDK.XmBindIdBoundToType] {
+    get
+  }
+}
+public enum XmBindIdScopeType : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case openId
+  case email
+  case phone
+  case networkInfo
+  public typealias AllCases = [XmBindIdSDK.XmBindIdScopeType]
+  public static var allCases: [XmBindIdSDK.XmBindIdScopeType] {
+    get
+  }
+}
+public enum XmRequiredVerifications : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case phone
+  case email
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [XmBindIdSDK.XmRequiredVerifications]
+  public typealias RawValue = Swift.String
+  public static var allCases: [XmBindIdSDK.XmRequiredVerifications] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum XmBindIdServerEnvironmentMode : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case production
+  case sandbox
+  case other
+  public typealias AllCases = [XmBindIdSDK.XmBindIdServerEnvironmentMode]
+  public static var allCases: [XmBindIdSDK.XmBindIdServerEnvironmentMode] {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(XmBindIdError) public class XmBindIdError : ObjectiveC.NSObject, Swift.Codable {
+  public var code: XmBindIdSDK.XmBindIdErrorCode! {
+    get
+  }
+  public var message: Swift.String! {
+    get
+  }
+  public var errorUri: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc(XmBindIdServerEnvironment) public class XmBindIdServerEnvironment : ObjectiveC.NSObject, Swift.Codable {
+  public var environmentMode: XmBindIdSDK.XmBindIdServerEnvironmentMode!
+  public var environmentUrl: Swift.String!
+  public init(environmentMode: XmBindIdSDK.XmBindIdServerEnvironmentMode)
+  public init(environmentUrl: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc(XmBindIdConfig) public class XmBindIdConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var serverEnvironment: XmBindIdSDK.XmBindIdServerEnvironment!
+  public var clientId: Swift.String!
+  public var apiCompat: XmBindIdSDK.XmBindIdApiCompatibilityLevel?
+  public var disableStateValidation: Swift.Bool?
+  public init(serverEnvironment: XmBindIdSDK.XmBindIdServerEnvironment, clientId: Swift.String)
+  public init(clientId: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc(XmBindIdLoginHint) public class XmBindIdLoginHint : ObjectiveC.NSObject, Swift.Codable {
+  public var type: XmBindIdSDK.XmBindIdLoginHintType!
+  public var value: Swift.String!
+  public init(type: XmBindIdSDK.XmBindIdLoginHintType, value: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc(XmBindIdBoundTo) public class XmBindIdBoundTo : ObjectiveC.NSObject, Swift.Codable {
+  public var type: XmBindIdSDK.XmBindIdBoundToType!
+  public var value: Swift.String!
+  public init(type: XmBindIdSDK.XmBindIdBoundToType, value: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(XmBindIdRequest) public class XmBindIdRequest : ObjectiveC.NSObject, Swift.Codable {
+  public var redirectUri: Swift.String!
+  public var nonce: Swift.String?
+  public var state: Swift.String?
+  public var scope: [XmBindIdSDK.XmBindIdScopeType]?
+  public var verifications: [XmBindIdSDK.XmRequiredVerifications]?
+  public var customMessage: Swift.String?
+  public var usePkce: Swift.Bool!
+  public var encrypted: Swift.Bool?
+  public var loginHint: XmBindIdSDK.XmBindIdLoginHint?
+  public var boundTo: XmBindIdSDK.XmBindIdBoundTo?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(XmBindIdAuthenticationRequest) public class XmBindIdAuthenticationRequest : XmBindIdSDK.XmBindIdRequest {
+  convenience public init(redirectUri: Swift.String, encrypted: Swift.Bool)
+  convenience public init(redirectUri: Swift.String)
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(XmBindIdBoundUserAuthenticationRequest) public class XmBindIdBoundUserAuthenticationRequest : XmBindIdSDK.XmBindIdRequest {
+  public var timeout: Swift.Int!
+  public var displayLoader: Swift.Int!
+  convenience public init(redirectUri: Swift.String, encrypted: Swift.Bool)
+  convenience public init(redirectUri: Swift.String)
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc(XmBindIdTransactionSigningDisplayData) public class XmBindIdTransactionSigningDisplayData : ObjectiveC.NSObject, Swift.Codable {
+  public var payee: Swift.String!
+  public var paymentAmount: Swift.String!
+  public var paymentMethod: Swift.String!
+  public init(payee: Swift.String, paymentAmount: Swift.String, paymentMethod: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc(XmBindIdTransactionSigningData) public class XmBindIdTransactionSigningData : ObjectiveC.NSObject, Swift.Codable {
+  public var displayData: XmBindIdSDK.XmBindIdTransactionSigningDisplayData!
+  public var additionalData: [Swift.String : Swift.String]?
+  public var essential: Swift.Bool?
+  public init(displayData: XmBindIdSDK.XmBindIdTransactionSigningDisplayData)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(XmBindIdTransactionSigningRequest) public class XmBindIdTransactionSigningRequest : XmBindIdSDK.XmBindIdRequest {
+  public var transactionSigningData: XmBindIdSDK.XmBindIdTransactionSigningData!
+  convenience public init(redirectUri: Swift.String, encrypted: Swift.Bool, transactionSigningData: XmBindIdSDK.XmBindIdTransactionSigningData)
+  convenience public init(redirectUri: Swift.String, transactionSigningData: XmBindIdSDK.XmBindIdTransactionSigningData)
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum XmBindIdTokenType : Swift.String, Swift.CaseIterable, Swift.Equatable, Swift.Hashable, Swift.Codable {
+  case bearer
+  public typealias AllCases = [XmBindIdSDK.XmBindIdTokenType]
+  public static var allCases: [XmBindIdSDK.XmBindIdTokenType] {
+    get
+  }
+}
+public protocol XmBindIdExchangeTokenResponse : Swift.Decodable, Swift.Encodable {
+  var accessToken: Swift.String! { get }
+  var idToken: Swift.String! { get }
+  var tokenType: XmBindIdSDK.XmBindIdTokenType! { get }
+  var expiresIn: Swift.Int! { get }
+}
+public protocol XmBindIdResponse : Swift.Decodable, Swift.Encodable {
+  var code: Swift.String! { get }
+  var state: Swift.String? { get }
+  var codeVerifier: Swift.String? { get }
+  var redirectUri: Swift.String! { get }
+}
+@objc(XmBindIdExchangeTokenRequest) public class XmBindIdExchangeTokenRequest : ObjectiveC.NSObject, Swift.Codable {
+  public var codeVerifier: Swift.String? {
+    get
+  }
+  public var code: Swift.String! {
+    get
+  }
+  public var redirectUri: Swift.String! {
+    get
+  }
+  public init(codeResponse: XmBindIdSDK.XmBindIdResponse)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(XmBindIdSdk) public class XmBindIdSdk : ObjectiveC.NSObject, Swift.Codable {
+  public static let shared: XmBindIdSDK.XmBindIdSdk
+  public func initialize(config: XmBindIdSDK.XmBindIdConfig, completion: ((Swift.Bool?, XmBindIdSDK.XmBindIdError?) -> ())?)
+  public func authenticate(bindIdRequestParams: XmBindIdSDK.XmBindIdAuthenticationRequest, completion: ((XmBindIdSDK.XmBindIdResponse?, XmBindIdSDK.XmBindIdError?) -> ())?)
+  public func authenticateBoundUser(bindIdRequestParams: XmBindIdSDK.XmBindIdBoundUserAuthenticationRequest, completion: ((XmBindIdSDK.XmBindIdResponse?, XmBindIdSDK.XmBindIdError?) -> ())?)
+  public func signTransaction(bindIdTransactionRequest: XmBindIdSDK.XmBindIdTransactionSigningRequest, completion: ((XmBindIdSDK.XmBindIdResponse?, XmBindIdSDK.XmBindIdError?) -> ())?)
+  public func exchangeToken(exchangeRequest: XmBindIdSDK.XmBindIdExchangeTokenRequest, completion: ((XmBindIdSDK.XmBindIdExchangeTokenResponse?, XmBindIdSDK.XmBindIdError?) -> ())?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension XmBindIdSDK.XmBindIdLoginHintType : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdBoundToType : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdApiCompatibilityLevel : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdScopeType : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmRequiredVerifications : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdTokenType : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdServerEnvironmentMode : Swift.RawRepresentable {}
+extension XmBindIdSDK.XmBindIdErrorCode : Swift.RawRepresentable {}

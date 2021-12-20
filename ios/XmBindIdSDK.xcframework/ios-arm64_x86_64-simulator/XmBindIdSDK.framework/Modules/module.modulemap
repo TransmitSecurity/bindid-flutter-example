@@ -1,0 +1,11 @@
+framework module XmBindIdSDK {
+  umbrella header "XmBindIdSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module XmBindIdSDK.Swift {
+    header "XmBindIdSDK-Swift.h"
+    requires objc
+}
